@@ -1,152 +1,78 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-
-const profileInfo = {
-    name: "Pramananda Sarkar",
-    img_url: "https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg=",
-    profile_id: "pramanandasarkar02"
-};
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { FiHome, FiCompass, FiTrendingUp, FiFolder, FiUser, FiHelpCircle, FiUpload } from 'react-icons/fi';
 
 const Navbar = () => {
-    const [isLogin, setIsLogIn] = useState(true);
-    const [isProfileOpen, setIsProfileOpen] = useState(false);
-    const profileRef = useRef(null);
+  const location = useLocation();
 
-    // Close profile menu when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (profileRef.current && !profileRef.current.contains(event.target)) {
-                setIsProfileOpen(false);
-            }
-        };
+  // Check if current route is active
+  const isActive = (path) => {
+    return location.pathname === path ? 'text-blue-600 bg-blue-50' : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50';
+  };
 
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+  return (
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:relative md:border-t-0 md:border-b z-10">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between md:justify-start">
+          {/* Mobile/Tablet View - Horizontal */}
+          <div className="flex w-full md:hidden">
+            <Link to="/" className={`flex flex-col items-center py-2 px-4 flex-1 ${isActive('/')}`}>
+              <FiHome className="text-xl" />
+              <span className="text-xs mt-1">Home</span>
+            </Link>
+            <Link to="/explore" className={`flex flex-col items-center py-2 px-4 flex-1 ${isActive('/explore')}`}>
+              <FiCompass className="text-xl" />
+              <span className="text-xs mt-1">Explore</span>
+            </Link>
+            <Link to="/trending" className={`flex flex-col items-center py-2 px-4 flex-1 ${isActive('/trending')}`}>
+              <FiTrendingUp className="text-xl" />
+              <span className="text-xs mt-1">Trending</span>
+            </Link>
+            <Link to="/collection" className={`flex flex-col items-center py-2 px-4 flex-1 ${isActive('/collection')}`}>
+              <FiFolder className="text-xl" />
+              <span className="text-xs mt-1">Collections</span>
+            </Link>
+            <Link to="/profile/me" className={`flex flex-col items-center py-2 px-4 flex-1 ${isActive('/profile')}`}>
+              <FiUser className="text-xl" />
+              <span className="text-xs mt-1">Profile</span>
+            </Link>
+          </div>
 
-    // Close menu when pressing Escape key
-    useEffect(() => {
-        const handleEscape = (event) => {
-            if (event.key === 'Escape') {
-                setIsProfileOpen(false);
-            }
-        };
-
-        document.addEventListener('keydown', handleEscape);
-        return () => {
-            document.removeEventListener('keydown', handleEscape);
-        };
-    }, []);
-
-    return (
-        <nav className="bg-white shadow-lg fixed w-full z-50">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
-                    <Link to="/" className="flex-shrink-0">
-                        <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            TechLib
-                        </h2>
-                    </Link>
-
-                    
-                    {/* Navigation Links */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <Link
-                            to="/explore"
-                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                        >
-                            Explore
-                        </Link>
-                        <Link
-                            to="/trending"
-                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                        >
-                            Trend
-                        </Link>
-                        <Link
-                            to="/collection"
-                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                        >
-                            Collections
-                        </Link>
-                        <Link
-                            to="/workspace"
-                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                        >
-                            WorkSpace
-                        </Link>
-                        <Link
-                            to="/help"
-                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                        >
-                            Help
-                        </Link>
-                    </div>
-
-                    {/* Profile Section */}
-                    <div className="flex items-center space-x-4" ref={profileRef}>
-                        {isLogin ? (
-                            <div className="relative">
-                                <button
-                                    onClick={() => setIsProfileOpen(!isProfileOpen)}
-                                    className="flex items-center focus:outline-none"
-                                >
-                                    <img
-                                        src={profileInfo.img_url}
-                                        alt="Profile"
-                                        className="h-10 w-10 rounded-full object-cover border-2 border-blue-100 cursor-pointer hover:border-blue-200 transition-colors"
-                                    />
-                                </button>
-
-                                {/* Profile Dropdown */}
-                                {isProfileOpen && (
-                                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 border border-gray-100">
-                                        <div className="px-4 py-3 border-b">
-                                            <p className="text-sm font-medium text-gray-900">{profileInfo.name}</p>
-                                            <p className="text-xs text-gray-500">@{profileInfo.profile_id}</p>
-                                        </div>
-                                        <Link
-                                            to="/profile"
-                                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                                            onClick={() => setIsProfileOpen(false)}
-                                        >
-                                            Show Profile
-                                        </Link>
-                                        <Link
-                                            to="/profile/edit"
-                                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                                            onClick={() => setIsProfileOpen(false)}
-                                        >
-                                            Edit Profile
-                                        </Link>
-                                        <button
-                                            onClick={() => {
-                                                setIsLogIn(false);
-                                                setIsProfileOpen(false);
-                                            }}
-                                            className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                                        >
-                                            Logout
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        ) : (
-                            <Link
-                                to="/login"
-                                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all"
-                            >
-                                Sign In
-                            </Link>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
+          {/* Desktop View - Vertical */}
+          <div className="hidden md:flex md:space-x-6 lg:space-x-8 w-full">
+            <Link to="/" className={`flex items-center py-4 px-2 ${isActive('/')}`}>
+              <FiHome className="text-xl mr-3" />
+              <span className="font-medium">Home</span>
+            </Link>
+            <Link to="/explore" className={`flex items-center py-4 px-2 ${isActive('/explore')}`}>
+              <FiCompass className="text-xl mr-3" />
+              <span className="font-medium">Explore</span>
+            </Link>
+            <Link to="/trending" className={`flex items-center py-4 px-2 ${isActive('/trending')}`}>
+              <FiTrendingUp className="text-xl mr-3" />
+              <span className="font-medium">Trending</span>
+            </Link>
+            <Link to="/collection" className={`flex items-center py-4 px-2 ${isActive('/collection')}`}>
+              <FiFolder className="text-xl mr-3" />
+              <span className="font-medium">Collections</span>
+            </Link>
+            <div className="flex-grow"></div>
+            <Link to="/help" className={`flex items-center py-4 px-2 ${isActive('/help')}`}>
+              <FiHelpCircle className="text-xl mr-3" />
+              <span className="font-medium">Help</span>
+            </Link>
+            <Link 
+              to="/workspace" 
+              className="flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors ml-4"
+            >
+              <FiUpload className="mr-2" />
+              <span>Upload</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
