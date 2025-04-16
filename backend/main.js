@@ -7,8 +7,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import connectDB from './config/db.js';
-import bookRouter  from './routes/book.js'; 
 
 connectDB();
 
@@ -24,7 +22,7 @@ app.use(express.json());
 
 
 
-app.use('/api/books', bookRouter);
+
 
 
 
