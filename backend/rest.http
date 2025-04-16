@@ -1,0 +1,10 @@
+
+# GET home page
+GET http://localhost:4040
+
+# GET All book 
+
+GET http://localhost:4040/api/books
+
+
+
