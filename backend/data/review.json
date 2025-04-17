@@ -1,0 +1,22 @@
+[
+    {"id": 1, "book_id": 1, "user_id": 1, "rating": 5, "comment": "A must-read for any programmer. Clear and practical advice.", "timestamp": "2025-01-10T14:30:00Z"},
+    {"id": 2, "book_id": 1, "user_id": 2, "rating": 4, "comment": "Great book, but some examples feel dated.", "timestamp": "2025-02-15T09:20:00Z"},
+    {"id": 3, "book_id": 2, "user_id": 3, "rating": 5, "comment": "Inspirational and full of wisdom.", "timestamp": "2025-03-01T11:00:00Z"},
+    {"id": 4, "book_id": 2, "user_id": 4, "rating": 4, "comment": "Really good, but a bit dense at times.", "timestamp": "2025-03-10T16:45:00Z"},
+    {"id": 5, "book_id": 3, "user_id": 5, "rating": 5, "comment": "The best book on distributed systems I've read.", "timestamp": "2025-02-20T08:15:00Z"},
+    {"id": 6, "book_id": 3, "user_id": 6, "rating": 5, "comment": "Deep and thorough, highly recommended.", "timestamp": "2025-03-05T12:30:00Z"},
+    {"id": 7, "book_id": 4, "user_id": 7, "rating": 4, "comment": "Great for understanding JS fundamentals.", "timestamp": "2025-01-25T10:10:00Z"},
+    {"id": 8, "book_id": 4, "user_id": 8, "rating": 5, "comment": "Really clarified closures for me.", "timestamp": "2025-02-28T14:50:00Z"},
+    {"id": 9, "book_id": 5, "user_id": 9, "rating": 4, "comment": "Challenging but rewarding read.", "timestamp": "2025-03-15T09:00:00Z"},
+    {"id": 10, "book_id": 5, "user_id": 10, "rating": 5, "comment": "A masterpiece in computer science.", "timestamp": "2025-03-20T13:20:00Z"},
+    {"id": 11, "book_id": 6, "user_id": 1, "rating": 5, "comment": "Essential for writing clean code.", "timestamp": "2025-02-10T15:40:00Z"},
+    {"id": 12, "book_id": 6, "user_id": 3, "rating": 4, "comment": "Very practical, but some parts are slow.", "timestamp": "2025-03-12T10:25:00Z"},
+    {"id": 13, "book_id": 7, "user_id": 2, "rating": 5, "comment": "The bible of algorithms.", "timestamp": "2025-01-30T11:15:00Z"},
+    {"id": 14, "book_id": 7, "user_id": 5, "rating": 4, "comment": "Dense but incredibly detailed.", "timestamp": "2025-02-25T16:00:00Z"},
+    {"id": 15, "book_id": 8, "user_id": 4, "rating": 5, "comment": "Perfect for beginners and intermediates.", "timestamp": "2025-03-08T09:30:00Z"},
+    {"id": 16, "book_id": 8, "user_id": 6, "rating": 4, "comment": "Great exercises, but pacing could be better.", "timestamp": "2025-03-18T14:10:00Z"},
+    {"id": 17, "book_id": 9, "user_id": 7, "rating": 5, "comment": "The definitive guide to deep learning.", "timestamp": "2025-02-15T12:00:00Z"},
+    {"id": 18, "book_id": 9, "user_id": 9, "rating": 5, "comment": "Math-heavy but incredibly insightful.", "timestamp": "2025-03-01T17:20:00Z"},
+    {"id": 19, "book_id": 10, "user_id": 8, "rating": 4, "comment": "Engaging story, but not very technical.", "timestamp": "2025-02-20T10:45:00Z"},
+    {"id": 20, "book_id": 10, "user_id": 10, "rating": 5, "comment": "A fun way to learn about DevOps.", "timestamp": "2025-03-10T15:30:00Z"}
+  ]

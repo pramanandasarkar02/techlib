@@ -1,0 +1,100 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    networks:
+      - techlib-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: techlib
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - techlib-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "4000:4040"
+    environment:
+      MONGODB_URI: "mongodb://root:root@mongodb:27017/techlib?authSource=admin"
+      PORT: 4040
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/app
+    networks:
+      - techlib-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    networks:
+      - techlib-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: admin
+    ports:
+      - "3001:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./admin:/app
+    networks:
+      - techlib-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+
+volumes:
+  mongodb-data:
+  postgres-data:
+
+networks:
+  techlib-network:
+    driver: bridge

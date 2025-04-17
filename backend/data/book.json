@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "isbn": "9780132350884",
+      "genre": "Programming",
+      "published_year": 2008,
+      "publisher": "Prentice Hall",
+      "description": "A handbook of agile software craftsmanship.",
+      "cover_image": "https://example.com/covers/clean_code.jpg",
+      "average_rating": 4.8
+    },
+    {
+      "id": 2,
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas",
+      "isbn": "9780135957059",
+      "genre": "Programming",
+      "published_year": 2019,
+      "publisher": "Addison-Wesley",
+      "description": "A guide to becoming a better programmer.",
+      "cover_image": "https://example.com/covers/pragmatic_programmer.jpg",
+      "average_rating": 4.7
+    },
+    {
+      "id": 3,
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "isbn": "9781449373320",
+      "genre": "Data Science",
+      "published_year": 2017,
+      "publisher": "O'Reilly Media",
+      "description": "Explores the architecture of scalable data systems.",
+      "cover_image": "https://example.com/covers/data_intensive.jpg",
+      "average_rating": 4.9
+    },
+    {
+      "id": 4,
+      "title": "You Don't Know JS (Scope & Closures)",
+      "author": "Kyle Simpson",
+      "isbn": "9781449335588",
+      "genre": "JavaScript",
+      "published_year": 2014,
+      "publisher": "O'Reilly Media",
+      "description": "A deep dive into JavaScript scope and closures.",
+      "cover_image": "https://example.com/covers/ydkjs_scope.jpg",
+      "average_rating": 4.6
+    },
+    {
+      "id": 5,
+      "title": "The Art of Computer Programming, Vol 1",
+      "author": "Donald E. Knuth",
+      "isbn": "9780201896831",
+      "genre": "Computer Science",
+      "published_year": 1997,
+      "publisher": "Addison-Wesley",
+      "description": "A classic on algorithms and programming.",
+      "cover_image": "https://example.com/covers/art_of_programming.jpg",
+      "average_rating": 4.5
+    },
+    {
+      "id": 6,
+      "title": "Refactoring",
+      "author": "Martin Fowler",
+      "isbn": "9780134757599",
+      "genre": "Programming",
+      "published_year": 2018,
+      "publisher": "Addison-Wesley",
+      "description": "A guide to improving the design of existing code.",
+      "cover_image": "https://example.com/covers/refactoring.jpg",
+      "average_rating": 4.7
+    },
+    {
+      "id": 7,
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen et al.",
+      "isbn": "9780262033848",
+      "genre": "Algorithms",
+      "published_year": 2009,
+      "publisher": "MIT Press",
+      "description": "A comprehensive guide to algorithms.",
+      "cover_image": "https://example.com/covers/intro_algorithms.jpg",
+      "average_rating": 4.8
+    },
+    {
+      "id": 8,
+      "title": "Python Crash Course",
+      "author": "Eric Matthes",
+      "isbn": "9781593279288",
+      "genre": "Python",
+      "published_year": 2019,
+      "publisher": "No Starch Press",
+      "description": "A beginner-friendly guide to Python programming.",
+      "cover_image": "https://example.com/covers/python_crash_course.jpg",
+      "average_rating": 4.6
+    },
+    {
+      "id": 9,
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow et al.",
+      "isbn": "9780262035613",
+      "genre": "Machine Learning",
+      "published_year": 2016,
+      "publisher": "MIT Press",
+      "description": "A foundational book on deep learning techniques.",
+      "cover_image": "https://example.com/covers/deep_learning.jpg",
+      "average_rating": 4.9
+    },
+    {
+      "id": 10,
+      "title": "The Phoenix Project",
+      "author": "Gene Kim et al.",
+      "isbn": "9781942788294",
+      "genre": "DevOps",
+      "published_year": 2018,
+      "publisher": "IT Revolution Press",
+      "description": "A novel about IT, DevOps, and business.",
+      "cover_image": "https://example.com/covers/phoenix_project.jpg",
+      "average_rating": 4.5
+    }
+  ]
