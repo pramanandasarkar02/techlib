@@ -11,6 +11,7 @@ import readerRouter from './routes/reader.route.js';
 import reviewRouter from './routes/review.route.js';
 import connectionRouter from './routes/connection.route.js';
 import writerRouter from './routes/writer.route.js';
+import recommendationRouter from './routes/recommendation.route.js';
 
 
 dotenv.config();
@@ -35,6 +36,7 @@ app.use('/api/reader', readerRouter);
 app.use('/api/review', reviewRouter);
 app.use('/api/connection', connectionRouter);
 app.use("/api/writer", writerRouter)
+app.use("/api/v1/recommendations", recommendationRouter)
 
 
 
