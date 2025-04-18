@@ -12,9 +12,12 @@ import reviewRouter from './routes/review.route.js';
 import connectionRouter from './routes/connection.route.js';
 import writerRouter from './routes/writer.route.js';
 import recommendationRouter from './routes/recommendation.route.js';
+import initializePostgresDb from './config/initPostgressDb.js';
 
 
 dotenv.config();
+
+initializePostgresDb();
 
 
 
