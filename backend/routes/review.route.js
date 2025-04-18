@@ -6,9 +6,9 @@ const reviewRouter = express.Router();
 
 
 
-reviewRouter.get("/:bookId", getComments);
-reviewRouter.post("/:bookId", comment);
-reviewRouter.put("/:reviewId/like", Like);
+reviewRouter.get("/comment/:bookId", getComments);
+reviewRouter.post("/comment/:bookId", comment);
+reviewRouter.put("/:bookId/:userId/like", Like);
 
 
 
