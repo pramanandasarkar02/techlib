@@ -23,4 +23,6 @@
 2.d uploadDocument              /api/v1/book/upload
 2.e deleteDocument              /api/v1/read/${userId}/delete
 2.f getshearDocumentLink        /api/v1/read/${userId}/${documentId}/shareLink
+2.g getAllgenre                 /api/v1/book/genre/getAllgenre
+2.h getDocumentTypes            /api/v1/book/type/getAllDocumentTypes
 

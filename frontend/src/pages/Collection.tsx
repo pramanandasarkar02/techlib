@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FiBook, FiHeart, FiDownload, FiUpload, FiSearch, FiX, FiStar, FiMoreVertical } from 'react-icons/fi';
+import UploadWindow from '../components/collection/UploadWindow';
+
 
 type Document = {
   id: string;
@@ -180,19 +182,7 @@ const Collection: React.FC<Props> = ({ initialDocuments = [] }) => {
         {/* Content area */}
         <main className="flex-1 overflow-y-auto p-6">
           {activeTab === 'upload' ? (
-            <div className="flex flex-col items-center justify-center h-full">
-              <div className="max-w-md w-full bg-white rounded-xl shadow-sm border border-dashed border-gray-300 p-8 text-center">
-                <FiUpload className="mx-auto text-4xl text-gray-400 mb-4" />
-                <h3 className="text-lg font-medium text-gray-800 mb-2">Upload Documents</h3>
-                <p className="text-gray-500 mb-6">Drag and drop files here or click to browse</p>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  Select Files
-                </button>
-                <div className="mt-4 text-sm text-gray-400">
-                  Supported formats: PDF, MD, DOCX (Max 20MB)
-                </div>
-              </div>
-            </div>
+            <UploadWindow />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {getDocumentsByTab().map((doc) => (
