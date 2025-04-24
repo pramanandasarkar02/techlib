@@ -1,6 +1,6 @@
 import { Books } from "../data/data.js";
 
-import * as bookModel from '../models/bookModel.js'
+// import * as bookModel from '../models/bookModel.js'
 
 
 const getAllBooks = async (req, res) => {
