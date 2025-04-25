@@ -14,6 +14,7 @@ import writerRouter from './routes/writer.route.js';
 import recommendationRouter from './routes/recommendation.route.js';
 import initializePostgresDb from './config/initPostgressDb.js';
 import adminUserRouter from './routes/admin/user.route.js';
+import adminDocumentRouter from './routes/admin/document.route.js';
 
 
 dotenv.config();
@@ -47,6 +48,7 @@ app.use("/api/v1/recommendations", recommendationRouter)
 
 
 app.use("/api/v1/admin/users", adminUserRouter)
+app.use("/api/v1/admin/documents", adminDocumentRouter)
 
 
 

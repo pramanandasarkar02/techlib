@@ -1,4 +1,4 @@
-import { getAllUsers } from "../../models/User.js";
+import { getAllUsers, getUserById } from "../../models/User.js";
 
 async function  getAllUsersController(req, res){
     const users = await getAllUsers();
@@ -6,8 +6,15 @@ async function  getAllUsersController(req, res){
 }
 
 
+async function getUserByIdController(req, res){
+    const { id } = req.params;
+    const user = await getUserById(id);
+    res.status(200).json({ user });
+}
+
 
 
 export {
-    getAllUsersController
+    getAllUsersController,
+    getUserByIdController
 }
