@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/users" element={<User/>} />
         <Route path="/documents" element={<Document/>} />
-        <Route path="/documents/:id" element={<SingleDocumentPage/>} />
-        <Route path="/users/:id" element={<SingleUserPage/>} />
+        <Route path="/documents/:documentId" element={<SingleDocumentPage/>} />
+        <Route path="/users/:userId" element={<SingleUserPage/>} />
       </Routes>
     
     </BrowserRouter>
