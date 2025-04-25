@@ -13,6 +13,8 @@ import connectionRouter from './routes/connection.route.js';
 import writerRouter from './routes/writer.route.js';
 import recommendationRouter from './routes/recommendation.route.js';
 import initializePostgresDb from './config/initPostgressDb.js';
+import adminUserRouter from './routes/admin/user.route.js';
+import adminDocumentRouter from './routes/admin/document.route.js';
 
 
 dotenv.config();
@@ -33,13 +35,20 @@ app.use(express.json());
 
 
 
-app.use('/api/auth', authRouter);
-app.use('/api/book', bookRouter);
-app.use('/api/reader', readerRouter);
-app.use('/api/review', reviewRouter);
-app.use('/api/connection', connectionRouter);
-app.use("/api/writer", writerRouter)
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/book', bookRouter);
+app.use('/api/v1/reader', readerRouter);
+app.use('/api/v1/review', reviewRouter);
+app.use('/api/v1/connection', connectionRouter);
+app.use("/api/v1/writer", writerRouter)
 app.use("/api/v1/recommendations", recommendationRouter)
+
+
+
+
+
+app.use("/api/v1/admin/users", adminUserRouter)
+app.use("/api/v1/admin/documents", adminDocumentRouter)
 
 
 

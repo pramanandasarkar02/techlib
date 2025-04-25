@@ -14,7 +14,12 @@ const pool = new Pool({
 })
 
 
-export default pool
+const pgClient = await pool.connect();
+
+export {
+    pool,
+    pgClient
+}
 
 
 

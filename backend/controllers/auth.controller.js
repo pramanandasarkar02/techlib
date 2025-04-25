@@ -30,4 +30,7 @@ const updatePassword = (req, res) => {
 
 
 
+
+
+
 export { login, register, updatePassword };

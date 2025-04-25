@@ -1,6 +1,6 @@
 import { Books } from "../data/data.js";
 
-import * as bookModel from '../models/bookModel.js'
+// import * as bookModel from '../models/bookModel.js'
 
 
 const getAllBooks = async (req, res) => {
@@ -73,4 +73,96 @@ const deleteBook = async (req, res) => {
 }
 
 
-export { getAllBooks, getBookById, createBook, updateBook, deleteBook };
+
+ // controllers/genresController.js
+const genres = [
+    "Java",
+    "Python",
+    "C",
+    "C++",
+    "JavaScript",
+    "Go",
+    "Rust",
+    "System Design",
+    "Machine Learning",
+    "Data Science",
+    "Artificial Intelligence",
+    "Web Development",
+    "Mobile Development",
+    "Cloud Computing",
+    "Databases",
+    "Networking",
+    "Operating Systems",
+    "Security",
+  ];
+  
+  const documentTypes = [
+    "Book",
+    "Journal",
+    "Magazine",
+    "Newspaper",
+    "E-Book",
+    "Audio Book",
+  ];
+  
+  const getAllGenres = async (req, res) => {
+    try {
+      // Log request details for debugging
+    //   console.log("Request URL:", req.originalUrl);
+    //   console.log("Genres array:", genres);
+  
+      // Validate query parameters
+      if (Object.keys(req.query).length > 0) {
+        // console.log("Invalid query parameters:", req.query);
+        return res.status(400).json({
+          success: false,
+          message: "Invalid query parameters",
+        });
+      }
+  
+      // Prepare and log response
+      const response = {
+        success: true,
+        message: "Genres retrieved successfully",
+        data: { genres },
+      };
+    //   console.log("Response:", response);
+  
+      res.status(200).json(response);
+    } catch (error) {
+      console.error("Error in getAllGenres:", error);
+      
+    }
+  };
+  
+  const getAllDocumentTypes = async (req, res, ) => {
+    try {
+      // Log request details for debugging
+    //   console.log("Request URL:", req.originalUrl);
+    //   console.log("DocumentTypes array:", documentTypes);
+  
+      // Validate query parameters
+      if (Object.keys(req.query).length > 0) {
+        // console.log("Invalid query parameters:", req.query);
+        return res.status(400).json({
+          success: false,
+          message: "Invalid query parameters",
+        });
+      }
+  
+      // Prepare and log response
+      const response = {
+        success: true,
+        message: "Document types retrieved successfully",
+        data: { documentTypes },
+      };
+    //   console.log("Response:", response);
+  
+      res.status(200).json(response);
+    } catch (error) {
+      console.error("Error in getAllDocumentTypes:", error);
+      
+    }
+  };
+
+export { getAllBooks, getBookById, createBook, updateBook, deleteBook, getAllGenres, getAllDocumentTypes };
