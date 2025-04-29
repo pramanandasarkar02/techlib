@@ -8,8 +8,8 @@ const recommendationRouter = express.Router();
 
 
 
-recommendationRouter.get("/:id", getRecommendation);
-recommendationRouter.get("/trending/:id", getTrending);
+recommendationRouter.get("/:userId", getRecommendation);
+recommendationRouter.get("/trending/:userId", getTrending);
 recommendationRouter.get("/new/:id", getNew);
 
 

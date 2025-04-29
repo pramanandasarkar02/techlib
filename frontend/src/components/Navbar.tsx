@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom'
-import { useTheme } from '../contexts/userContext';
+import { useTheme } from '../contexts/themeContext';
+
 
 // Import the ThemeContext we defined earlier
 
@@ -49,7 +50,7 @@ const Navbar = (props: Props) => {
 
         <button 
           onClick={toggleTheme}
-          className={`ml-4 p-2 rounded-full ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-300 hover:bg-gray-400'}`}
+          className={`ml-4 p-2 rounded-full ${theme === 'dark' ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-700 hover:bg-gray-800'}`}
           aria-label="Toggle dark mode"
         >
           {theme === 'dark' ? (
