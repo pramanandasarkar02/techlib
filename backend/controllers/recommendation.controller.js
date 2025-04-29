@@ -1,10 +1,10 @@
-import { Books, Users } from "../data/data.js";
+import { pgClient } from "../config/postgresdb.js";
 
 
 const getRecommendation = (req, res) => {
     const { userId } = req.params;
 
-    // Logic to retrieve recommendations for a user 
+    // Logic to retrieve recommended books for a user
 
     const recommendedBooks = Books;
 
@@ -28,9 +28,9 @@ const getNew = (req, res) => {
 const getTrending = (req, res) => {
     // Logic to retrieve trending books
 
-    const trendingBooks = Books;    
-
-    res.status(200).json({ trendingBooks });    
+    // query to find the document most like * 2 and upvote * 10 . 
+    
+    
 }   
 
 export { getRecommendation, getNew, getTrending }

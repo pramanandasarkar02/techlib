@@ -169,6 +169,9 @@ const initializePostgresDb = async () => {
             FOR EACH ROW
             EXECUTE PROCEDURE update_modified_column();
         `);
+        // 
+
+        
 
         await client.query('COMMIT');
         console.log("PostgreSQL database initialized successfully with sample data");
