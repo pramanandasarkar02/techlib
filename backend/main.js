@@ -6,7 +6,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRouter from './routes/auth.route.js';
-import bookRouter from './routes/book.route.js';
+
 import readerRouter from './routes/reader.route.js';
 import reviewRouter from './routes/review.route.js';
 import connectionRouter from './routes/connection.route.js';
@@ -15,6 +15,7 @@ import recommendationRouter from './routes/recommendation.route.js';
 import initializePostgresDb from './config/initPostgressDb.js';
 import adminUserRouter from './routes/admin/user.route.js';
 import adminDocumentRouter from './routes/admin/document.route.js';
+import documentRouter from './routes/document.route.js';
 
 
 dotenv.config();
@@ -36,7 +37,7 @@ app.use(express.json());
 
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/book', bookRouter);
+app.use('/api/v1/document', documentRouter);
 app.use('/api/v1/reader', readerRouter);
 app.use('/api/v1/review', reviewRouter);
 app.use('/api/v1/connection', connectionRouter);
