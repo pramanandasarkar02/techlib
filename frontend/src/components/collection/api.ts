@@ -7,8 +7,11 @@ export const fetchDocuments = async (type: 'saved' | 'liked' | 'downloaded', use
         'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
       }
     });
+
     if (!response.ok) throw new Error('Failed to fetch documents');
-    return await response.json();
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
     console.error(`Error fetching ${type} documents:`, error);
     throw error;

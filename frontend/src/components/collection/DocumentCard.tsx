@@ -37,7 +37,7 @@ const DocumentCard: React.FC<DocumentCardProps> = ({ document, isSelected, onCli
               }`}
             />
           ))}
-          <span className="ml-1 text-xs text-gray-500">{document.rating.toFixed(1)}</span>
+          <span className="ml-1 text-xs text-gray-500">{document.rating}</span>
         </div>
         
         <div className="flex justify-between text-xs text-gray-500">
@@ -53,14 +53,14 @@ const DocumentCard: React.FC<DocumentCardProps> = ({ document, isSelected, onCli
       
       <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
         <div className="flex flex-wrap gap-1">
-          {document.tags.map(tag => (
+          {/* {document.tags.map(tag => (
             <span 
               key={tag}
               className="px-2 py-1 text-xs bg-gray-200 text-gray-700 rounded-full"
             >
               {tag}
             </span>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

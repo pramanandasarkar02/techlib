@@ -1,8 +1,8 @@
 export type Document = {
-    id: string;
+    _id: string;
     title: string;
     author: string;
-    type: 'pdf' | 'markdown' | 'word' | string;
+    type: any;
     likes: number;
     downloads: number;
     rating: number;

@@ -53,9 +53,9 @@ const DocumentList: React.FC<DocumentListProps> = ({ type, userId, searchQuery }
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedDocuments.map((doc) => (
           <DocumentCard
-            key={doc.id}
+            key={doc._id}
             document={doc}
-            isSelected={selectedDocument?.id === doc.id}
+            isSelected={selectedDocument?._id === doc._id}
             onClick={() => setSelectedDocument(doc)}
           />
         ))}
