@@ -1,5 +1,5 @@
 import { pgClient } from "../config/postgresdb.js";
-import { createDocument, getAllDocumentTypes } from "../models/Document.js";
+import { createDocument, getAllDocumentTypes, getDownloadedDocuments, getLikedDocuments, getSavedDocuments } from "../models/Document.js";
 
 
 const createDocumentController = async (req, res) => {
@@ -27,7 +27,32 @@ const getAllDocumentTypeController = async (req, res) => {
 }
 
 
+const getLikedDocumentsController = async (req, res) => {
+  const { userId } = req.params;
+  const result = await getLikedDocuments(userId);
+  res.status(200).json(result);
+}
+
+const getSavedDocumentsController = async (req, res) => {
+  const { userId } = req.params;
+  console.log(userId)
+  const result = await getSavedDocuments(userId);
+  res.status(200).json(result);
+}
+
+const getDownloadedDocumentsController = async (req, res) => {
+  const { userId } = req.params;
+  const result = await getDownloadedDocuments(userId);
+  res.status(200).json(result);
+}
+
+
+
+
 export {
     createDocumentController,
-    getAllDocumentTypeController
+    getAllDocumentTypeController,
+    getLikedDocumentsController,
+    getSavedDocumentsController,
+    getDownloadedDocumentsController
 }

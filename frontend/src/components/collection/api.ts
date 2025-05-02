@@ -2,7 +2,7 @@ const API_BASE_URL = 'http://localhost:4040/api/v1';
 
 export const fetchDocuments = async (type: 'saved' | 'liked' | 'downloaded', userId: string) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/documents/${type}/${userId}`, {
+    const response = await fetch(`${API_BASE_URL}/document/${type}/${userId}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
       }

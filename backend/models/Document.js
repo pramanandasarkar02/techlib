@@ -89,9 +89,40 @@ const validateDocument = (document) => {
     return result.rows
 }
 
+
+
+const getSavedDocuments = async (userId) => {
+    console.log("request for saved documents")
+    const query = `
+            SELECT * FROM documents;
+    `
+    const result = await pgClient.query(query)
+    return result.rows
+}
+
+const getDownloadedDocuments = async (userId) => {
+    const query = `
+            SELECT * FROM documents;
+    `
+    const result = await pgClient.query(query)
+    return result.rows
+}
+
+const getLikedDocuments = async (userId) => {
+    const query = `
+            SELECT * FROM documents;
+    `
+    const result = await pgClient.query(query)
+    return result.rows
+}
+
+
 export {
     getAllDocuments,
     getDocumentById,
     createDocument,
-    getAllDocumentTypes
+    getAllDocumentTypes,
+    getSavedDocuments,
+    getDownloadedDocuments,
+    getLikedDocuments
 }
